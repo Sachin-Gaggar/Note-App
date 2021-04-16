@@ -1,0 +1,11 @@
+export const PUT_DATA = 'PUT_DATA';
+export const CREATE_USER = 'CREATE_USER';
+export const AUTHENTICATE_USER = 'AUTHENTICATE_USER';
+export const IS_USER_LOGGED_IN = 'IS_USER_LOGGED_IN';
+export const USER_NOT_LOGGED_IN = 'USER_NOT_LOGGED_IN';
+export const DARK_MODE = 'DARK_MODE';
+export const LOG_OUT = 'LOG_OUT';
+export const CREATE_NOTE = 'CREATE_NOTE';
+export const GET_NOTE = 'GET_NOTE';
+export const DELETE_NOTE = 'DELETE_NOTE';
+export const LIST_NOTES = 'LIST_NOTES';

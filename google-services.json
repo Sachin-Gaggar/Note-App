@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "174681359161",
+    "project_id": "socialintegration-cd08f",
+    "storage_bucket": "socialintegration-cd08f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174681359161:android:7fe9d1fdb3c32989dfdee8",
+        "android_client_info": {
+          "package_name": "com.assessment3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174681359161-fjougptniki72m4884352j83cm0q2bqr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.assessment3",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "174681359161-s2a3j9nl1vvqn64q8avcu7vaonpvhpm2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT_cpKZSzod9MBNd6oX3h2poBDR5Cb_WU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174681359161-s2a3j9nl1vvqn64q8avcu7vaonpvhpm2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "174681359161-ggjscu8i5gsttkdp1a2c2152fajak08t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.Assessment3"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
