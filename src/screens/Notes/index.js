@@ -31,6 +31,7 @@ class Notes extends React.Component {
             <CustomDrawer
               {...props}
               darkMode={this.props.darkMode}
+              id={this.props.id}
               toggleDarkMode={() => this.props.toggleDarkMode()}
               logOut={() => this.props.logOut()}
             />

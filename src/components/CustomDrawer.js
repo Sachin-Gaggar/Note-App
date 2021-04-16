@@ -39,6 +39,7 @@ const CustomDrawer = (props) => {
     </DrawerContentScrollView>
   );
 };
+
 export default CustomDrawer;
 const styles = StyleSheet.create({
   darkMode: {

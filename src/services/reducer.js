@@ -77,7 +77,13 @@ export function NotesReducer(state = initialNoteState, action) {
         noteTitle: action.noteTitle,
         latestTitle: action.latestTitle
       };
-
+    case LOG_OUT:
+      return {
+        data: [],
+        isLoading: true,
+        noteTitle: [],
+        latestTitle: ''
+      };
     default:
       return state;
   }
