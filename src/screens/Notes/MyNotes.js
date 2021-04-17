@@ -37,7 +37,16 @@ class MyNotes extends React.Component {
       },
       itemModal: false
     };
+    this._animated = new Animated.Value(0);
   }
+  componentDidMount() {
+    Animated.timing(this._animated, {
+      toValue: 1,
+      duration: 1000,
+      useNativeDriver: true
+    }).start();
+  }
+
   setAddModalVisible = (visible) => {
     this.setState({ addModal: visible });
   };
@@ -52,33 +61,50 @@ class MyNotes extends React.Component {
     }
     let data = this.props.data.filter((obj) => obj.title === item.title);
     return (
-      <TouchableOpacity
-        onPress={() => {
-          this.setItemModalVisible(true);
-          this.props.setListData(data);
-        }}
+      <Animated.View
         style={[
-          styles.items,
-          this.props.darkMode ? styles.darkItems : null,
-          latest ? styles.latestItem : null
+          { opacity: this._animated },
+          {
+            transform: [
+              { scale: this._animated },
+              {
+                rotate: this._animated.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: ['180deg', '0deg'],
+                  extrapolate: 'clamp'
+                })
+              }
+            ]
+          }
         ]}>
-        <Text
+        <TouchableOpacity
+          onPress={() => {
+            this.setItemModalVisible(true);
+            this.props.setListData(data);
+          }}
           style={[
-            styles.title,
-            this.props.darkMode ? styles.footerDarkTxt : null,
-            latest ? styles.red : null
+            styles.items,
+            this.props.darkMode ? styles.darkItems : null,
+            latest ? styles.latestItem : null
           ]}>
-          {item.title}
-        </Text>
-        <Text
-          style={[
-            styles.title,
-            this.props.darkMode ? styles.fontDarkText : null,
-            latest ? styles.red : null
-          ]}>
-          {data.length}
-        </Text>
-      </TouchableOpacity>
+          <Text
+            style={[
+              styles.title,
+              this.props.darkMode ? styles.footerDarkTxt : null,
+              latest ? styles.red : null
+            ]}>
+            {item.title}
+          </Text>
+          <Text
+            style={[
+              styles.title,
+              this.props.darkMode ? styles.fontDarkText : null,
+              latest ? styles.red : null
+            ]}>
+            {data.length}
+          </Text>
+        </TouchableOpacity>
+      </Animated.View>
     );
   };
   renderNoteList = ({ item, index }) => {
@@ -168,7 +194,6 @@ class MyNotes extends React.Component {
             onSubmit={() => {
               this.props.createNote(id, note);
 
-              this.props.getNotes(id);
               setTimeout(() => {
                 this.setState({ note: { title: '', note: '' } });
               }, 1);

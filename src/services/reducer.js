@@ -64,11 +64,6 @@ const initialNoteState = {
 export function NotesReducer(state = initialNoteState, action) {
   switch (action.type) {
     case CREATE_NOTE:
-      return {
-        ...state,
-        isLoading: false,
-        data: action.data
-      };
 
     case GET_NOTE:
       return {

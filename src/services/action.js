@@ -152,9 +152,37 @@ export const createNote = (id, note) => async (dispatch) => {
     });
     const json = await response.json();
     if (json.status === true) {
+      let unformatedData = json.data;
+      let noteTitle = '';
+      let latestTitle = '';
+      if (unformatedData.length != 0) {
+        noteTitle = unformatedData.reduce(
+          (accumulator, current, currentIndex) => {
+            if (currentIndex === 0) {
+              accumulator.push({ title: current.title });
+              return accumulator;
+            } else {
+              let filteredArray = accumulator.filter(
+                (obj) => obj.title !== current.title
+              );
+              accumulator = filteredArray;
+              accumulator.push({ title: current.title });
+              return accumulator;
+            }
+          },
+          []
+        );
+        unformatedData.sort((a, b) => {
+          return new Date(b.createdDate) - new Date(a.createdDate);
+        });
+        latestTitle = unformatedData[0].title;
+      }
+
       dispatch({
         type: CREATE_NOTE,
-        data: json.data
+        data: json.data,
+        noteTitle: noteTitle,
+        latestTitle: latestTitle
       });
     } else {
       console.log(' API is working but message has error', json.message);

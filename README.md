@@ -7,10 +7,18 @@
 <img width='300px' src="./src/assets/screen5.png"> <img width='300px' src="./src/assets/screen6.png">
 <img width='300px' src="./src/assets/screen7.png">
 
-#### video
+#### full video
 
-<img  src="./src/assets/video.gif">
+<img  src="./src/assets/video1.gif">
 
-### session continuation and logout fixed
+### session continuation
 
 <img  src="./src/assets/video2.gif">
+
+#### create note
+
+<img  src="./src/assets/video3.gif">
+
+### animation added (after)
+
+<img  src="./src/assets/video4.gif">
